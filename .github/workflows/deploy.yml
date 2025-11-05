@@ -1,0 +1,63 @@
+# .github/workflows/deploy.yml
+name: Astro CD Pipeline to K8s (main)
+
+on:
+  push:
+    branches:
+      - master # Запускать при пуше в ветку master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # --- 1. Проверка репозитория ---
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # --- 2. Сборка Astro и Docker ---
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro Static Files
+        run: npm run build # Создает папку dist/
+
+      # --- 3. Авторизация в Timeweb Registry и сборка Docker ---
+      - name: Log in to Registry
+        uses: docker/login-action@v3
+        with:
+          registry: 12cbd00d-reasonable-corvus.registry.twcstorage.ru
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: 12cbd00d-reasonable-corvus.registry.twcstorage.ru/main:latest # ✅ УНИКАЛЬНОЕ ИМЯ ОБРАЗА
+
+      # --- 4. Развертывание в Kubernetes (GitOps) ---
+      - name: Set up Kubeconfig
+        # Создает файл kubeconfig из секрета
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBE_CONFIG_DATA }}" > ~/.kube/config
+          
+      - name: Check Kubeconfig and Context
+        run: kubectl config get-contexts
+
+      - name: Apply K8s Manifests
+        # Применяем все ваши YAML-файлы (Deployment, Service, Ingress)
+        run: kubectl apply -f main-manifests.yaml # ✅ УНИКАЛЬНОЕ ИМЯ ФАЙЛА
+
+      - name: Trigger K8s Deployment Restart
+        # Принудительно заставляем K8s скачать новый образ с тегом :latest
+        run: kubectl rollout restart deployment main-deployment # ✅ УНИКАЛЬНОЕ ИМЯ DEPLOYMENT
+
+      - name: Clean up Kubeconfig
+        run: rm ~/.kube/config

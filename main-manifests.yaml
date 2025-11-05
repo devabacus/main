@@ -1,0 +1,87 @@
+# main-manifests.yaml
+
+# --- 1. Deployment: Запуск контейнера Nginx/Astro ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-deployment  # ✅ УНИКАЛЬНОЕ ИМЯ
+  labels:
+    app: main-web
+spec:
+  replicas: 2 # Две копии для отказоустойчивости
+  selector:
+    matchLabels:
+      app: main-web
+  template:
+    metadata:
+      labels:
+        app: main-web
+    spec:
+      # Используем секрет для доступа к приватному реестру Timeweb
+      imagePullSecrets:
+      - name: timeweb-registry-secret 
+      containers:
+      - name: main-nginx
+        # ПОЛНЫЙ ПУТЬ К ВАШЕМУ ОБРАЗУ
+        image: 12cbd00d-reasonable-corvus.registry.twcstorage.ru/main:latest  # ✅ УНИКАЛЬНОЕ ИМЯ ОБРАЗА
+        imagePullPolicy: Always  # ✅ ВАЖНО: всегда скачивать новый образ
+        
+        resources:
+          limits:
+            memory: "64Mi" 
+            cpu: "50m" 
+        
+        ports:
+        - containerPort: 80 # Nginx порт
+        
+        # Проверки, которые подтверждают, что контейнер запущен и готов
+        readinessProbe:
+          httpGet:
+            path: / 
+            port: 80
+          initialDelaySeconds: 5 
+          periodSeconds: 10     
+---
+# --- 2. Service: Внутренний доступ ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: main-service  # ✅ УНИКАЛЬНОЕ ИМЯ
+spec:
+  selector:
+    app: main-web
+  ports:
+    # Имя 'web' для согласованности с Ingress
+    - name: web 
+      protocol: TCP
+      port: 80 
+      targetPort: 80 
+  type: ClusterIP
+---
+# --- 3. Ingress: Внешний доступ через HTTPS ---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: main-ingress  # ✅ УНИКАЛЬНОЕ ИМЯ
+  annotations:
+    # Аннотации для NGINX Ingress и cert-manager
+    kubernetes.io/ingress.class: "nginx" 
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" 
+  labels:
+    app: main-web
+spec:
+  tls:
+  - hosts:
+    - wiki.mrfrolk.com  # ✅ ВАШ ДОМЕН
+    secretName: main-tls  # ✅ УНИКАЛЬНОЕ ИМЯ СЕКРЕТА
+  rules:
+  - host: "wiki.mrfrolk.com"  # ✅ ВАШ ДОМЕН
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: main-service
+            port:
+              name: web # Именованный порт из Service
