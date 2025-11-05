@@ -1,5 +1,5 @@
 ---
-title: deploy astro в кластере
+title: Asrto Starlight deploy
 ---
 
 [официальная документация](https://starlight.astro.build/getting-started/)

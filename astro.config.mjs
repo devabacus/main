@@ -8,24 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'База знаний - MrFrolk',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/devabacus/' }, { icon: 'telegram', label: 'Telegram', href: 'https://t.me/mrfrolk' }],
-			head: [
-        // {
-        //   tag: 'script',
-        //   attrs: {
-        //     // Скрипт встраивается внутри тега
-        //   },
-        //   content: `
-        //     document.addEventListener('astro:page-load', () => {
-        //       const activeLink = document.querySelector('.sidebar-content [aria-current="page"]');
-        //       if (activeLink) {
-        //         const details = activeLink.closest('details');
-        //         if (details) details.open = true;
-        //       }
-        //     });
-        //   `,
-        // },
-      ],
-
+		
 			sidebar: [
 				{
 					label: 'Auth',
@@ -35,45 +18,46 @@ export default defineConfig({
 					},
 				},
 				{
-					label: 'Creative-tools',
+					label: 'CAD-3D',
 					collapsed: true,
 					autogenerate: {
-						directory: 'creative-tools',
+						directory: 'cad-3d',
 					},
 				},
 				{
-					label: 'Devops',
+					label: 'Development',
+					collapsed: true,
+					autogenerate: {
+						directory: 'development',
+					},
+				},
+				{
+					label: 'DevOps',
 					collapsed: true,
 					autogenerate: {
 						directory: 'devops',
 					},
 				},
 				{
-					label: 'Flutter',
+					label: 'Graphics-video',
 					collapsed: true,
 					autogenerate: {
-						directory: 'flutter',
+						directory: 'graphics-video',
 					},
 				},
 				{
-					label: 'Frameworks',
+					label: 'Tools',
 					collapsed: true,
 					autogenerate: {
-						directory: 'frameworks',
+						directory: 'tools',
 					},
 				},
+			
 				{
-					label: 'MCU-dev',
+					label: 'Web-development',
 					collapsed: true,
 					autogenerate: {
-						directory: 'mcu-dev',
-					},
-				},
-				{
-					label: 'NextCloud',
-					collapsed: true,
-					autogenerate: {
-						directory: 'nextCloud',
+						directory: 'web-development',
 					},
 				},
 

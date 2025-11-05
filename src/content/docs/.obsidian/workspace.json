@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "flutter/serverpod/serverpod.md",
+                "file": "web-development/astro/Asrto Starlight deploy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "serverpod"
+              "title": "Asrto Starlight deploy"
             }
           }
         ]
@@ -169,8 +169,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "6ea8b930872a33ff",
+  "active": "931b727a3cd3adcb",
   "lastOpenFiles": [
+    "cad-3d",
+    "flutter/serverpod/serverpod.md",
     "mcu-dev/index.md",
     "frameworks/frappe/erpNext/index.md",
     "frameworks/index.md",
@@ -204,8 +206,6 @@
     "erpNext/getting-started.md",
     "erpNext/serverpod.md",
     "web-development/astro/deploy.md",
-    "web-development/wordpress/deploy.md",
-    "creative-tools/inkscape/getting-started.md",
-    "creative-tools/gimp/getting-started.md"
+    "web-development/wordpress/deploy.md"
   ]
 }
