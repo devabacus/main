@@ -1,0 +1,28 @@
+---
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+---
+
+<CardGrid>
+  <LinkCard
+    title="Справочник (Reference)"
+    description="Все ваши заметки, организованные по темам."
+    href="/reference/" 
+    // Если хотите, добавьте иконку Starlight (например, 'book')
+    icon="open-book" 
+  />
+
+  <LinkCard
+    title="Проекты"
+    description="Наши активные и завершенные проекты."
+    href="/projects/introduction" 
+    icon="pencil-line"
+  />
+
+  <LinkCard
+    title="Руководства"
+    description="Пошаговые инструкции и туториалы."
+    href="/guides/getting-started" 
+    icon="clipboard-list"
+  />
+
+  </CardGrid>

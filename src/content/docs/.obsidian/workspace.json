@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "97b80c913a7ccc8d",
+    "type": "split",
+    "children": [
+      {
+        "id": "be5d77ebc9227c8f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6ea8b930872a33ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "flutter/serverpod/serverpod.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "serverpod"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2a4bc8e2d634326a",
+    "type": "split",
+    "children": [
+      {
+        "id": "05d4f03781d5637a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "931b727a3cd3adcb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6e7b274450f2c71a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "4ef0b76c41831969",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5a2c30f750c77d9d",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f18a41517792258",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4320de9d830c983f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "flutter/serverpod/serverpod.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for serverpod"
+            }
+          },
+          {
+            "id": "560a9a3b355722a7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "flutter/serverpod/serverpod.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from serverpod"
+            }
+          },
+          {
+            "id": "d7f7ae7d0ecbd831",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "87a17d2d15488a0b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "flutter/serverpod/serverpod.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of serverpod"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "6ea8b930872a33ff",
+  "lastOpenFiles": [
+    "mcu-dev/index.md",
+    "frameworks/frappe/erpNext/index.md",
+    "frameworks/index.md",
+    "auth/index.md",
+    "creative-tools/index.md",
+    "flutter/index.md",
+    "devops/index.md",
+    "index.mdx",
+    "index.md",
+    "devops/index.mds",
+    "devops/getting-started.md",
+    "devops/index.mdx",
+    "frameworks/frappe/erpNext/getting-started.md",
+    "frameworks/frappe/erpNext",
+    "frameworks/frappe/getting-started.md",
+    "frameworks/frappe",
+    "frameworks/erpNext/getting-started.md",
+    "frameworks/erpNext",
+    "frameworks",
+    "erp-systems/erpNext/getting-started.md",
+    "erp-systems/erpNext",
+    "erp-systems/getting-started.md",
+    "erp-systems",
+    "devops/timeweb-cloud/getting-started.md",
+    "devops/linux/getting-started.md",
+    "devops/kubernetes/getting-started.md",
+    "devops/docker/getting-started.md",
+    "nextCloud/getting-started.md",
+    "nextCloud",
+    "auth/zitadel/getting-started.md",
+    "erpNext/getting-started.md",
+    "erpNext/serverpod.md",
+    "web-development/astro/deploy.md",
+    "web-development/wordpress/deploy.md",
+    "creative-tools/inkscape/getting-started.md",
+    "creative-tools/gimp/getting-started.md"
+  ]
+}
