@@ -1,3 +1,6 @@
+---
+title: drift_web_doc
+---
 Web
 Drift support in Flutter and Dart web apps.
 Stable web support
